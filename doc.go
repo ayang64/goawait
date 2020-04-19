@@ -28,19 +28,15 @@
 //
 // The polling functions are based on Bill Kennedy's retryTimeout concurrency example(https://github.com/ardanlabs/gotraining/blob/master/topics/go/concurrency/channels/example1/example1.go)
 //
-// package goawait also has a DSL, based on Awaitility's (https://github.com/awaitility/awaitility),
-// to use it just start with AtMost or WithContext functions:
+// Await
 //
-//     goawait.AtMost(10 * time.Second).
-//         UntilTrue(receivedMessage)
+// Await is a type that allows applications to have a common wait specification. This way they can
+// reuse the same GoAwait configuration in different awaits.
 //
-//     goawait.WithContext(cancelContext).
-//         UntilNoError(connectToServer)
 //
-//     goawait.WithContext(cancelContext).
-//         AtMost(1 * time.Second).
-//         RetryingEvery(10 * time.Millisecond).
-//         UntilNoError(connectToServer)
+//    defaultAwait := goawait.NewAwait(appContext, 10 * time.Second, 500 * time.Millisecond)
 //
-// DSL constructors have a default retry time of 100ms
+//    defaultAwait.UntilNoError(connectToServer)
+//
+//    defaultAwait.Untiltrue(pageHasElement)
 package goawait
