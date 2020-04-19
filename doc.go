@@ -34,7 +34,7 @@
 // reuse the same GoAwait configuration in different awaits.
 //
 //
-//    defaultAwait := goawait.NewAwait(appContext, 10 * time.Second, 500 * time.Millisecond)
+//    defaultAwait := goawait.NewAwait(10 * time.Second, 500 * time.Millisecond)
 //
 //    defaultAwait.UntilNoError(connectToServer)
 //

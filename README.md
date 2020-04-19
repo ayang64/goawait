@@ -30,7 +30,7 @@ Await is a type that allows applications to have a common wait specification. Th
 reuse the same GoAwait configuration in different awaits. 
 
 ```go
-defaultAwait := goawait.NewAwait(appContext, 10 * time.Second, 500 * time.Millisecond)
+defaultAwait := goawait.NewAwait(10 * time.Second, 500 * time.Millisecond)
 
 defaultAwait.UntilNoError(connectToServer)
 
